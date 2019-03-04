@@ -93,6 +93,11 @@ import DTFoundation
     For an auto-renewable subscription, whether or not it is in the introductory price period. This key is only present for auto-renewable subscription receipts.
     */
     fileprivate(set) public var introOfferPeriod: Int?
+    public var introOfferPeriodNumber : NSNumber? {
+        get {
+            return introOfferPeriod as NSNumber?
+        }
+    }
 
     /**
     The designated initializer
