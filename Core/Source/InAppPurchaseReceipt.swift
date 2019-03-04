@@ -90,6 +90,11 @@ import DTFoundation
     }
     
     /**
+    For an auto-renewable subscription, whether or not it is in the introductory price period. This key is only present for auto-renewable subscription receipts.
+    */
+    fileprivate(set) public var introOfferPeriod: Int?
+
+    /**
     The designated initializer
     */
     public init?(data: Data)
@@ -164,6 +169,9 @@ import DTFoundation
             
         case 1712:
             cancellationDate = try _dateFromData(data)
+
+        case 1719:
+            introOfferPeriod = try _intFromData(data)
             
         default:
             // all other types are private
